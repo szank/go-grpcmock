@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = 'github.com/szank/go-grpcmock/cmd/capture/book';
+
+
+message Book {
+    int64 isbn = 1;
+    string title = 2;
+    string author = 3;
+}
+
+message GetBookRequest {
+    int64 isbn = 1;
+}
+
+
+service BookService {
+    rpc GetBook (GetBookRequest) returns (Book) {}
+}
